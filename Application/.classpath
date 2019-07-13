@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/maqui/OneDrive/Documentos/ANÁLISE E DESENVOLVIMENTO DE SISTEMAS/4º SEMESTRE/PADROES/trabalho 1/Interfaces"/>
+	<classpathentry kind="src" path="/trabalho 1_Interfaces"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
