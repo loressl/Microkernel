@@ -2,11 +2,11 @@ package products;
 
 import interfaces.IDocumentValidator;
 
-public class ImageValidator implements IDocumentValidator{
+public class ImageValidator implements IDocumentValidator {
 
-	@Override
-	public void validate() {
-		System.out.println("Validação de imagem realizada com sucesso!!");
-	}
+    @Override
+    public void validate() {
+        System.out.println("ValidaÃ§Ã£o de imagem realizada com sucesso!!");
+    }
 
 }
