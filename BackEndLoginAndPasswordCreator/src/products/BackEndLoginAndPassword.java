@@ -6,7 +6,7 @@ public class BackEndLoginAndPassword implements IAutenticationBackEnd{
 
 	@Override
 	public void messageAutentication() {
-		System.out.println("AutenticaÃ§Ã£o de login e senha criada com sucesso!");	
+		System.out.println("Autenticação de login e senha criada com sucesso!");	
 	}
 
 }

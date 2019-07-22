@@ -1,7 +1,6 @@
 
 package application;
 
-import interfaces.ICore;
 import interfaces.IDocumentFactory;
 import interfaces.IUIController;
 
@@ -17,7 +16,7 @@ import javax.swing.JMenuItem;
 public class UIController implements IUIController {
 
 	@Override
-	public boolean initialize(ICore core) {
+	public boolean initialize() {
 		mainWindow = new MainWindow();
 		mainWindow.setVisible(true);
 		
@@ -28,7 +27,7 @@ public class UIController implements IUIController {
 				if (jFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 					File file = jFileChooser.getSelectedFile();
 					String typeExtension = file.getName().substring(file.getName().lastIndexOf(".") + 1);
-					verifyExtension(typeExtension, core);
+					verifyExtension(typeExtension);
 					System.out.println("\nDocumento: " + file.getName() + ".\n");
 				} else {
 					System.out.println("\nAbertura de arquivo cancela.");
@@ -65,9 +64,9 @@ public class UIController implements IUIController {
 		return myMenuItem;
 	}
 	
-	private void verifyExtension(String typeExtension, ICore core) {
+	private void verifyExtension(String typeExtension) {
 		boolean foundExtension = false;
-		List<IDocumentFactory> loadedPluginsByType = core.getPluginController().getLoadedPluginsByType(IDocumentFactory.class);
+		List<IDocumentFactory> loadedPluginsByType = Core.getInstance().getPluginController().getLoadedPluginsByType(IDocumentFactory.class);
 		for (IDocumentFactory documentFactory : loadedPluginsByType) {
 			StringTokenizer extensions = new StringTokenizer(documentFactory.getSupportedExtensions(), "|");
 			while (extensions.hasMoreTokens()) {

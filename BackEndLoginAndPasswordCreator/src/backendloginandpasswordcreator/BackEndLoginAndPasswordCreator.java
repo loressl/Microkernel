@@ -2,7 +2,6 @@ package backendloginandpasswordcreator;
 
 import interfaces.AutenticationBackEndCreator;
 import interfaces.IAutenticationBackEnd;
-import interfaces.ICore;
 import interfaces.IPlugin;
 
 import products.BackEndLoginAndPassword;
@@ -10,7 +9,7 @@ import products.BackEndLoginAndPassword;
 public class BackEndLoginAndPasswordCreator extends AutenticationBackEndCreator implements IPlugin{
 
 	@Override
-	public boolean initialize(ICore core) {
+	public boolean initialize() {
 		return true;
 	}
 

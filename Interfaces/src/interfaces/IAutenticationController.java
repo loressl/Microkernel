@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface IAutenticationController {
-	public boolean initialize(ICore core);
+	public boolean initialize();
 	public void setAutenticationBackCreator(AutenticationBackEndCreator autenticationBackEndCreator);
 }

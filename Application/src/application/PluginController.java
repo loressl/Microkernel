@@ -1,7 +1,6 @@
 
 package application;
 
-import interfaces.ICore;
 import interfaces.IPlugin;
 import interfaces.IPluginController;
 
@@ -18,7 +17,7 @@ import java.util.logging.Logger;
 public class PluginController implements IPluginController {
 
 	@Override
-	public boolean initialize(ICore core) {
+	public boolean initialize() {
 		File currentDir = new File("./plugins");
 		String[] plugins = currentDir.list();
 		int i;
@@ -40,9 +39,8 @@ public class PluginController implements IPluginController {
 				Logger.getLogger(PluginController.class.getName()).log(Level.SEVERE, null, ex);
 			}
 			if (plugin != null)
-				if (plugin.initialize(core))
+				if (plugin.initialize())
 					loadedPlugins.add(plugin);
-
 		}
 
 		return true;
@@ -61,8 +59,8 @@ public class PluginController implements IPluginController {
 			if (interfaceFactory.isAssignableFrom(plugin.getClass()))
 				loadedPluginsByType.add((T) plugin);
 		}
+		
 		return loadedPluginsByType;
-
 	}
 
 	private List<IPlugin> loadedPlugins = new ArrayList<IPlugin>();

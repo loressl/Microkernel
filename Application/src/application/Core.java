@@ -5,22 +5,21 @@ import interfaces.IAutenticationController;
 import interfaces.ICore;
 import interfaces.IPluginController;
 import interfaces.IUIController;
-import sun.security.jca.GetInstance;
 
 public class Core implements ICore {
 
-    private Core() {
-        uiController = new UIController();
-        pluginController = new PluginController();
-        autenticationController = new AutenticationController();
-        pluginController.initialize(this);
-        autenticationController.initialize(this);
-        uiController.initialize(this);
-    }
+    private Core() {}
     
     public static Core getInstance() {
-    	if(instance == null)
+    	if(instance == null) {
     		instance = new Core();
+    		uiController = new UIController();
+    		pluginController = new PluginController();
+    		autenticationController = new AutenticationController();
+    		pluginController.initialize();
+    		autenticationController.initialize();
+    		uiController.initialize();		
+    	}
     	return instance;
     }
     
@@ -40,8 +39,8 @@ public class Core implements ICore {
     }
     
     private static Core instance = null;
-    private IUIController uiController;
-    private IPluginController pluginController;
-    private IAutenticationController autenticationController;
+    private static IUIController uiController;
+    private static IPluginController pluginController;
+    private static IAutenticationController autenticationController;
     
 }

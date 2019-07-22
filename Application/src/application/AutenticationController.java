@@ -12,12 +12,11 @@ import org.w3c.dom.Document;
 
 import interfaces.AutenticationBackEndCreator;
 import interfaces.IAutenticationController;
-import interfaces.ICore;
 
 public class AutenticationController implements IAutenticationController {
 
 	@Override
-	public boolean initialize(ICore core) {
+	public boolean initialize() {
 		try {
 			File currentDir = new File("./autentication");
 			String[] files = currentDir.list();
@@ -30,7 +29,7 @@ public class AutenticationController implements IAutenticationController {
 				}
 			}
 			String classeName = null;
-			List<AutenticationBackEndCreator> autenticationCreators = core.getPluginController()
+			List<AutenticationBackEndCreator> autenticationCreators = Core.getInstance().getPluginController()
 					.getLoadedPluginsByType(AutenticationBackEndCreator.class);
 			for (int i = 0; i < xmls.length; i++) {
 				DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
