@@ -8,6 +8,8 @@ import products.BackEndLoginAndPassword;
 
 public class BackEndLoginAndPasswordCreator extends AutenticationBackEndCreator implements IPlugin{
 
+	public BackEndLoginAndPasswordCreator() {}
+	
 	@Override
 	public boolean initialize() {
 		return true;
