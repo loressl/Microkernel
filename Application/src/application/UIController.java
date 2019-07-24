@@ -83,10 +83,9 @@ public class UIController implements IUIController {
 		}
 
 		if (!foundExtension)
-			System.out.println("\nNão há suporte para a extensão de arquivo " + typeExtension + ".");
+			System.out.println("\nNï¿½o hï¿½ suporte para a extensï¿½o de arquivo " + typeExtension + ".");
 		
 	}
 
 	private MainWindow mainWindow;
-
 }

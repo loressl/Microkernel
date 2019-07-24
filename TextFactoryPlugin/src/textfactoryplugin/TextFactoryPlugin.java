@@ -11,6 +11,14 @@ import products.TextValidator;
 
 public class TextFactoryPlugin implements IPlugin, IDocumentFactory {
 
+	private TextFactoryPlugin() {}
+
+	public static TextFactoryPlugin getInstance() {
+		if(instance == null)
+			instance = new TextFactoryPlugin();
+		return instance;
+	}
+	
 	@Override
 	public boolean initialize() {
 		return true;
@@ -35,5 +43,6 @@ public class TextFactoryPlugin implements IPlugin, IDocumentFactory {
 	public String getSupportedExtensions() {
 		return "txt|xml|pdf|doc|docx";
 	}
-
+	
+	private static TextFactoryPlugin instance = null;
 }

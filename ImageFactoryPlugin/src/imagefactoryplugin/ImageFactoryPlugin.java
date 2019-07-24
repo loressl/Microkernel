@@ -9,13 +9,21 @@ import products.ImageEditor;
 import products.ImageSerializer;
 import products.ImageValidator;
 
-public class ImageFactoryPlugin implements IPlugin, IDocumentFactory{
+public class ImageFactoryPlugin implements IPlugin, IDocumentFactory {
 
+	private ImageFactoryPlugin() {}
+	
+	public static ImageFactoryPlugin getInstance() {
+		if(instance == null)
+			instance = new ImageFactoryPlugin();
+		return instance;
+	}
+	
 	@Override
 	public boolean initialize() {
 		return true;
 	}
-	
+
 	@Override
 	public IDocumentEditor getDocumentEditor() {
 		return new ImageEditor();
@@ -36,4 +44,5 @@ public class ImageFactoryPlugin implements IPlugin, IDocumentFactory{
 		return "bitmap|bmp|tiff|jpeg|gif|png|jpg";
 	}
 
+	private static ImageFactoryPlugin instance = null;
 }

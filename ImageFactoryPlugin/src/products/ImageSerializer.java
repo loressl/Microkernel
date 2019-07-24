@@ -13,5 +13,4 @@ public class ImageSerializer implements IDocumentSerializer{
 	public void save() {
 		System.out.println("Documento de imagem salvo com sucesso!!");
 	}
-
 }

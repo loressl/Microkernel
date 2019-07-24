@@ -8,5 +8,4 @@ public class ImageEditor implements IDocumentEditor{
 	public void open() {
 		System.out.println("Editor de imagem aberto com sucesso!!");	
 	}
-
 }

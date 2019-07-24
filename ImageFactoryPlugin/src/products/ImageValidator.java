@@ -6,7 +6,6 @@ public class ImageValidator implements IDocumentValidator{
 
 	@Override
 	public void validate() {
-		System.out.println("Validação de imagem realizada com sucesso!!");
+		System.out.println("Validaï¿½ï¿½o de imagem realizada com sucesso!!");
 	}
-
 }
