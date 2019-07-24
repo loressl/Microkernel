@@ -1,3 +1,5 @@
-/BackEndLoginAndPasswordCreator/nbproject/private/
 /Application/build/
+/Application/bin/
 /Interfaces/build/
+/Interfaces/bin/
+*.classpath
