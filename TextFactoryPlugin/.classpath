@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/maqui/OneDrive/Documentos/ANÁLISE E DESENVOLVIMENTO DE SISTEMAS/4º SEMESTRE/PADROES/trabalho 1/Interfaces"/>
 	<classpathentry kind="src" path="/trabalho 1_Interfaces"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TextAdapter"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

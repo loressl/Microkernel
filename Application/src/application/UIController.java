@@ -27,7 +27,7 @@ public class UIController implements IUIController {
 				if (jFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 					File file = jFileChooser.getSelectedFile();
 					String typeExtension = file.getName().substring(file.getName().lastIndexOf(".") + 1);
-					verifyExtension(typeExtension);
+					verifyExtension(typeExtension, file);
 					System.out.println("\nDocumento: " + file.getName() + ".\n");
 				} else {
 					System.out.println("\nAbertura de arquivo cancela.");
@@ -64,14 +64,14 @@ public class UIController implements IUIController {
 		return myMenuItem;
 	}
 	
-	private void verifyExtension(String typeExtension) {
+	private void verifyExtension(String typeExtension, File file) {
 		boolean foundExtension = false;
 		List<IDocumentFactory> loadedPluginsByType = Core.getInstance().getPluginController().getLoadedPluginsByType(IDocumentFactory.class);
 		for (IDocumentFactory documentFactory : loadedPluginsByType) {
 			StringTokenizer extensions = new StringTokenizer(documentFactory.getSupportedExtensions(), "|");
 			while (extensions.hasMoreTokens()) {
 				if (typeExtension.equals(extensions.nextToken())) {
-					documentFactory.getDocumentEditor().open();
+					documentFactory.getDocumentEditor().open(typeExtension, file);
 					documentFactory.getDocumentValidator().validate();
 					documentFactory.getDocumentSerializer().load();
 					documentFactory.getDocumentSerializer().save();
@@ -83,9 +83,10 @@ public class UIController implements IUIController {
 		}
 
 		if (!foundExtension)
-			System.out.println("\nNï¿½o hï¿½ suporte para a extensï¿½o de arquivo " + typeExtension + ".");
+			System.out.println("\nNão há suporte para a extensão de arquivo " + typeExtension + ".");
 		
 	}
 
 	private MainWindow mainWindow;
+
 }

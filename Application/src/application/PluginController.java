@@ -86,4 +86,5 @@ public class PluginController implements IPluginController {
 	}
 
 	private List<IPlugin> loadedPlugins = new ArrayList<IPlugin>();
+
 }

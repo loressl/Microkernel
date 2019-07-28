@@ -6,6 +6,7 @@ public class TextValidator implements IDocumentValidator{
 
 	@Override
 	public void validate() {
-		System.out.println("Validaï¿½ï¿½o de texto realizada com sucesso!!");
+		System.out.println("Validação de texto realizada com sucesso!!");
 	}
+
 }

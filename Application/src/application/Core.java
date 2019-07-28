@@ -41,5 +41,6 @@ public class Core implements ICore {
     private static Core instance = null;
     private static IUIController uiController;
     private static IPluginController pluginController;
-    private static IAutenticationController autenticationController; 
+    private static IAutenticationController autenticationController;
+    
 }
