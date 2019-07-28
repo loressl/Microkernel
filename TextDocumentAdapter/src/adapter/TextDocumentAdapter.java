@@ -6,7 +6,7 @@ import adaptee.PdfFile;
 import interfaces.IDocumentAdaptee;
 import interfaces.IDocumentAdapter;
 
-public class TextAdapter implements IDocumentAdapter{
+public class TextDocumentAdapter implements IDocumentAdapter{
 
 	@Override
 	public void setAdaptee(String typeExtension) {

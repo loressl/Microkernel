@@ -2,14 +2,14 @@ package products;
 
 import java.io.File;
 
-import adapter.TextAdapter;
+import adapter.TextDocumentAdapter;
 import interfaces.IDocumentAdapter;
 import interfaces.IDocumentEditor;
 
 public class TextEditor implements IDocumentEditor{
 	
 	public TextEditor() {
-		this.documentAdapter = new TextAdapter();
+		this.documentAdapter = new TextDocumentAdapter();
 	}
 	
 	@Override
